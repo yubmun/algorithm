@@ -24,11 +24,11 @@ let arr2 = [
  */
 function map(array, callback) {
   if(!Array.isArray(array)){
-    console.error(`${array}는 array가 아닙니다`);
+    console.error(`배열이 아닙니다`);
     return;
   }
   if(typeof callback !== 'function'){
-    console.error(`${callback}는 함수가 아닙니다`);
+    console.error(`함수가 아닙니다`);
     return;
   }
 
