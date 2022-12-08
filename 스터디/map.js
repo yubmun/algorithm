@@ -23,7 +23,20 @@ let arr2 = [
  * @param callback (value, index) 형식의 2개의 param을 갖는 함수
  */
 function map(array, callback) {
-  
+  if(!Array.isArray(array)){
+    console.error(`${array}는 array가 아닙니다`);
+    return;
+  }
+  if(typeof callback !== 'function'){
+    console.error(`${callback}는 함수가 아닙니다`);
+    return;
+  }
+
+  let result = [];
+  for (let i=0; i < array.length; i++){
+    result.push(callback(array[i]));
+  }
+  return result;
 }
 
 let mappedA = map(123, (value, index)=>{}); // 'array가 아닙니다'
